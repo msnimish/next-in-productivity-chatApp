@@ -32,7 +32,15 @@ var role = "";
 var code = "";
 const Tasks = () => {
     return (
-        <Tabs isFitted variant="enclosed" position="absolute" top="0px" left="20vw" w={{ base: "100vw", md: "80vw", xl: "60vw" }} gap="30px" minH={"100vh"} m="20px auto">
+        <Tabs 
+        isFitted variant="enclosed" 
+        position="absolute" 
+        top={{ base: "10vh", md: "0", xl: "0" }} 
+        left={{ base: "0", md: "20vw", xl: "20vw" }}  
+        w={{ base: "100vw", md: "80vw", xl: "60vw" }} 
+        gap="30px" 
+        minH={"100vh"} 
+        m="20px auto">
             <TabList w="100%" >
                 <Tab _selected={{ bg: "#4486F6", color: "white" }} fontWeight="600">Project Tasks</Tab>
                 {/* <Tab _selected={{bg:"#F5B544", color:"black"}} fontWeight="600">Personal Tasks</Tab> */}
@@ -112,12 +120,15 @@ const TaskContentProject = () => {
                         <Stack
                         ref={provided.innerRef}
                         {...provided.droppableProps}
-                        overflowY={'auto'}
-                        w="100%" 
-                        height={height}
+                        overflowY={{ base:'none', md: 'auto', xl: 'auto' }} 
+                        minH={{ base:height/4.2 }} 
+                        w="100%"
+                        height={{ base:'max-content', md: height, xl: height }} 
                         gap='20px'
                         bg={'#F1948A'}
-                        p="15px" 
+                        p="15px"
+                        direction={{ base: "row", md: "column", xl: "column" }} 
+                        overflowX={'auto'}
                         borderRadius={"10px"}>
                             {todo.map((task, i) => {
                                 if (task.status === "todo") {
@@ -137,12 +148,15 @@ const TaskContentProject = () => {
                         <Stack 
                         ref={provided.innerRef}
                         {...provided.droppableProps}
-                        overflowY={'auto'}
+                        overflowY={{ base:'none', md: 'auto', xl: 'auto' }} 
                         w="100%" 
-                        height={height}
+                        minH={{ base:height/4.2 }} 
+                        height={{ base:'max-content', md: height, xl: height }} 
                         gap='20px'
                         bg="#F9E79F" 
                         p="15px" 
+                        direction={{ base: "row", md: "column", xl: "column" }} 
+                        overflowX={'auto'}
                         borderRadius={"10px"}>
                             {inprogress.map((task, i) => {
                                 if (task.status === "inprogress") {
@@ -161,12 +175,15 @@ const TaskContentProject = () => {
                         <Stack 
                         ref={provided.innerRef}
                         {...provided.droppableProps}
-                        overflowY={'auto'}
+                        overflowY={{ base:'none', md: 'auto', xl: 'auto' }} 
                         w="100%" 
-                        height={height}
+                        height={{ base:'max-content', md: height, xl: height }} 
                         gap="20px" 
                         bg="#82E0AA"
+                        minH={{ base:height/4.2 }} 
                         p="15px" 
+                        direction={{ base: "row", md: "column", xl: "column" }} 
+                        overflowX={'auto'}
                         borderRadius={"10px"}>
                             {done.map((task, i) => {
                                 if (task.status === "done") {
