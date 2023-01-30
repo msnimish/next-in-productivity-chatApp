@@ -152,7 +152,7 @@ const Chat = () => {
               <Icon
                 as={GrFormClose}
                 cursor="pointer"
-                bg={"transparent"}
+                bg={"white"}
                 w="40px"
                 h="40px"
                 color="#4F5E7B"
@@ -171,13 +171,14 @@ const Chat = () => {
             {msgs.map(ele=><ChatBubble data={ele}/>)}  
           </CardBody>
           <CardFooter
+          bg="white"
             sx={{
               boxShadow:
                 "rgba(60, 64, 67, 0.3) 0px 1px 2px 0px, rgba(60, 64, 67, 0.15) 0px 2px 6px 2px",
             }}
             p="5px 20px"
           >
-            <Flex flexDirection={"column"} w="100%">
+            <Flex flexDirection={"column"} w="100%" >
               {/* <Flex><Menu>Options</Menu></Flex> */}
               {/* <Divider/> */}
               <Flex
@@ -186,6 +187,7 @@ const Chat = () => {
                 w="100%"
                 gap="20px"
                 m="10px 0px"
+                
               >
                 <Icon
                   as={BiSmile}
@@ -210,7 +212,7 @@ const Chat = () => {
                 />
                 <Button
                   onClick={handleSend}
-                  bg={"transparent"}
+                  bg={"white"}
                   w="20px"
                   height={"20px"}
                   borderRadius="40px"

@@ -205,9 +205,9 @@ const SidebarContent = ({ onClose: onClosed, ...rest }) => {
                     </Text>
                     <CloseButton display={{ base: 'flex', md: 'none' }} onClick={onClosed} />
                 </Flex>
-                {role=='admin'?<Button display={'block'} m='auto' onClick={onOpen1}>Invite more members</Button>:null}
+                {role=='admin'?<Button display={'block'} m='auto' style={{marginBottom:"5px"}} onClick={onOpen1}>Invite more members</Button>:null}
                 <Divider size='10' colorScheme='blue' />
-                <Heading>Members</Heading>
+                <Heading size="5"  style={{display:'grid',justifyContent:"center", padding:"5px"}}>Members</Heading>
                 <Divider size='10' colorScheme='blue' />
                 <Box
                 h={'100%'}
