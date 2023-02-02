@@ -20,8 +20,7 @@ import io from 'socket.io-client'
 import { useDispatch, useSelector } from 'react-redux'
 import { teamAction } from "../../redux/user/user.action";
 
-const endpoint = 'http://localhost:8080'
-// 'https://next-in-back-end.onrender.com/'
+const endpoint = process.env.NEXT_PUBLIC_API_LINK
 let arr = []
 
 const Chat = () => {
@@ -87,8 +86,8 @@ const Chat = () => {
         onClick={handleClick}
         display={isActive ? "none" : "flex"}
         position="fixed"
-        top={"85vh"}
-        left="93vw"
+        bottom={'5vh'}
+        right={'5vh'}
         w="65px"
         bg={"#2F80ED"}
         height={"65px"}
@@ -110,9 +109,10 @@ const Chat = () => {
         display={isActive ? "flex" : "none"}
         w={{base:"100vw",md:"60vw", lg:"25vw"}}
         position={"fixed"}
-        top="0px"
-        left="75vw"
-        height={"100vh"}
+        top={{ base:'12vh', md: '0px', xl: '0px' }} 
+        right='0vh'
+        border={'1px solid red'}
+        height={{ base:'88vh', md: 'auto', xl: '100vh' }} 
         fontFamily="Poppins"
       >
         <Card

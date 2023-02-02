@@ -46,7 +46,7 @@ export default function TaskCard({ data, status, index }) {
                     {...provided.dragHandleProps}
                     h='25%'
                     bg="white" 
-                    // minW={{ base: "100%", lg: "100%", "2xl": "100%" }}
+                    minW={{ base: "max-content" }}
                     minH="25%"
                     p="10px">
                         <CardBody p="0px">

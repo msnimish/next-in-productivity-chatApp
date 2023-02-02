@@ -66,7 +66,7 @@ export default function AllUser({ children }) {
     }, [])
 
     return (
-        <Box minH="100vh" bg={useColorModeValue('gray.100', 'gray.900')}>
+        <Box minH="100vh" bg={useColorModeValue('gray.100', 'gray.900')} >
             <SidebarContent
                 onClose={() => onClose}
                 display={{ base: 'none', md: 'block' }}
@@ -192,7 +192,7 @@ const SidebarContent = ({ onClose: onClosed, ...rest }) => {
                 bg={useColorModeValue('white', 'gray.900')}
                 borderRight="1px"
                 borderRightColor={useColorModeValue('gray.200', 'gray.700')}
-                w={'19.5%'}
+                w={{ base:'100%', md: '19.5%', xl: '19.5%' }} 
                 pos="fixed"
                 h="full"
                 {...rest}>
@@ -272,7 +272,10 @@ const MobileNav = ({ onOpen, ...rest }) => {
             ml={{ base: 0, md: 60 }}
             px={{ base: 4, md: 24 }}
             height="20"
+            position='sticky'
+            top='0'
             alignItems="center"
+            zIndex={'100'}
             bg={useColorModeValue('white', 'gray.900')}
             borderBottomWidth="1px"
             borderBottomColor={useColorModeValue('gray.200', 'gray.700')}
@@ -286,7 +289,7 @@ const MobileNav = ({ onOpen, ...rest }) => {
             />
 
             <Text fontSize="2xl" ml="8" fontFamily="monospace" fontWeight="bold">
-                Logo
+                Next In
             </Text>
         </Flex>
     );
