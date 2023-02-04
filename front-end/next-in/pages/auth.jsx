@@ -229,7 +229,7 @@ export default function Auth() {
                             </div>
                         </form>
                         <form onSubmit={handleSignup} action="#" className="sign-up-form">
-                            <h2 className="title">Sign up</h2>
+                            <h2 className="title">Sign up with new accont</h2>
                             <div className="input-field">
                                 <input name='name' type="text" onChange={handleChange} placeholder="Name" />
                             </div>
