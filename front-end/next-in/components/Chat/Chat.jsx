@@ -111,7 +111,7 @@ const Chat = () => {
         position={"fixed"}
         top={{ base:'12vh', md: '0px', xl: '0px' }} 
         right='0vh'
-        border={'1px solid red'}
+        // border={'1px solid red'}
         height={{ base:'88vh', md: 'auto', xl: '100vh' }} 
         fontFamily="Poppins"
       >
@@ -147,14 +147,16 @@ const Chat = () => {
               w="20px"
               height={"20px"}
               borderRadius="40px"
-              _hover={{ bg: "transparent" }}
-            >
+              // border="1px solid black"
+              >
               <Icon
                 as={GrFormClose}
                 cursor="pointer"
-                bg={"white"}
+                _hover={{ bg: "white" }}
+                bg={"transparent"}
                 w="40px"
                 h="40px"
+                borderRadius="40px"
                 color="#4F5E7B"
               />
             </Button>

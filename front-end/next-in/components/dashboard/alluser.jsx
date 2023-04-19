@@ -96,6 +96,7 @@ const SidebarContent = ({ onClose: onClosed, ...rest }) => {
     const dispatch = useDispatch()
     const { isOpen, onOpen, onClose } = useDisclosure()
     const { teamData } = useSelector(store => store.team);
+    const { userData } = useSelector(store => store.auth);
     const toast = useToast()
     const { isOpen:isOpen1, onOpen:onOpen1, onClose:onClose1 } = useDisclosure()
     const [task, setTask] = useState({
@@ -107,6 +108,7 @@ const SidebarContent = ({ onClose: onClosed, ...rest }) => {
         assignee: "",
         chatroom: ""
     });
+    console.log(teamData);
 
 
     const handleTask = (assignee, chatroom) => {
@@ -196,13 +198,17 @@ const SidebarContent = ({ onClose: onClosed, ...rest }) => {
                 pos="fixed"
                 h="full"
                 {...rest}>
-                <Flex mx='2px' py='15px' justifyContent="space-around">
+                <Flex mx='30px' py='15px' justifyContent="space-between">
                     <Text fontSize='22px' fontWeight='bold'>
                         <Flex alignItems="center" gap="10px">
-                            {teamName}
+                            {`Team: ${teamName}`}
                             <BiRefresh cursor="pointer" onClick={() => { dispatch(teamAction(code)) }} />
                         </Flex>
                     </Text>
+                    <Flex gap="10px">
+                        <Text fontWeight="600">{userData.name}</Text>
+                        <Avatar size="xs" name={userData.name}></Avatar>
+                    </Flex>
                     <CloseButton display={{ base: 'flex', md: 'none' }} onClick={onClosed} />
                 </Flex>
                 {role=='admin'?<Button display={'block'} m='auto' style={{marginBottom:"5px"}} onClick={onOpen1}>Invite more members</Button>:null}
@@ -214,6 +220,14 @@ const SidebarContent = ({ onClose: onClosed, ...rest }) => {
                 overflowY={'auto'}
                 scrollBehavior={'smooth'}
                 >
+                    {/* <Flex
+                    alignItems={'center'}
+                    p="2"
+                    mr="4"
+                    >
+                        <Avatar name={userData.name} mr='15px' />
+                        <Text fontSize={'20px'}>{userData.name}</Text>
+                    </Flex> */}
                 {teamData.members.map((link) => (
                     <NavItem onClick={() => { handleTask(link._id, link.currentChatroom) }} key={link.name}>
                         {link}

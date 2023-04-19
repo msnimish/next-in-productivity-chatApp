@@ -31,6 +31,8 @@ import { updateTaskAction } from "../../redux/user/user.action";
 var role = "";
 var code = "";
 const Tasks = () => {
+    let { userData } = useSelector(state => state.auth);
+    console.log(userData);
     return (
         <Tabs 
         isFitted variant="enclosed" 
@@ -125,7 +127,7 @@ const TaskContentProject = () => {
                         w="100%"
                         height={{ base:'max-content', md: height, xl: height }} 
                         gap='20px'
-                        bg={'#F1948A'}
+                        bg={'rgba(241,148,138,0.2)'}
                         p="15px"
                         direction={{ base: "row", md: "column", xl: "column" }} 
                         overflowX={'auto'}
@@ -153,7 +155,7 @@ const TaskContentProject = () => {
                         minH={{ base:height/4.2 }} 
                         height={{ base:'max-content', md: height, xl: height }} 
                         gap='20px'
-                        bg="#F9E79F" 
+                        bg="rgba(249, 231, 159, 0.2)" 
                         p="15px" 
                         direction={{ base: "row", md: "column", xl: "column" }} 
                         overflowX={'auto'}
@@ -179,7 +181,7 @@ const TaskContentProject = () => {
                         w="100%" 
                         height={{ base:'max-content', md: height, xl: height }} 
                         gap="20px" 
-                        bg="#82E0AA"
+                        bg="rgba(130,224,170,0.2)"
                         minH={{ base:height/4.2 }} 
                         p="15px" 
                         direction={{ base: "row", md: "column", xl: "column" }} 
